@@ -24,3 +24,7 @@ echo '{"block_size": 1024, "data_hex": "48656c6c6f"}' | ./merkle-etag compute
 ### stream-init / stream-feed / stream-finalize
 
 Incremental streaming API for computing the Merkle root from parts that arrive out of order.
+
+## Known Issues
+
+- `compute` produces incorrect hashes for data spanning 3 or more canonical blocks. See `test_compute.sh` for a failing test case.
